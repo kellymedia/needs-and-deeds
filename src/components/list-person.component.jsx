@@ -7,21 +7,22 @@ import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
 const ListBar = (props) => {
     return (
         <tr>
-            <td>{props.student.student_name}</td>
-            <td>{props.student.student_number}</td>
-            <td>{props.student.student_entry}</td>
+            <td>{props.person.person_name}</td> 
+            <td>{props.person.person_address}</td>
+            <td>{props.person.person_need}</td>
+            <td>{props.person.person_contactnumber}</td>
             <td>
-                {props.student.student_verification ? <Badge color="primary">Verified</Badge> : <Badge color="warning">Not Verified</Badge>}
+                {props.person.person_verification ? <Badge color="primary">Verified</Badge> : <Badge color="warning">Not Verified</Badge>}
             </td>
             <td>
-                <Link to={"/edit/" + props.student._id}><AiOutlineEdit /></Link>
-                <Link to={"/delete/"+props.student._id}><AiOutlineDelete /></Link>
+                <Link to={"/edit/" + props.person._id}><AiOutlineEdit /></Link>
+                <Link to={"/delete/"+props.person._id}><AiOutlineDelete /></Link>
             </td>
         </tr>
     );
 }
 
-const ListStudent = () => {
+const ListPerson = () => {
     const [listData, setListData] = useState({ lists: [] });
 
     useEffect(() => {
@@ -36,20 +37,20 @@ const ListStudent = () => {
 
     return (
         <div>
-            <h3>List Student</h3>
+            <h3>List Need</h3>
             <Table striped style={{ marginTop: 20 }}>
                 <thead>
                     <tr>
-                        <th>Student Name</th>
-                        <th>Student Number</th>
-                        <th>Student Entry</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Need</th>
                         <th>Verification</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {listData.lists.map((current, i) => (
-                        <ListBar student={current} key={i} />
+                        <ListBar person={current} key={i} />
                     ))}
                 </tbody>
             </Table>
@@ -57,4 +58,4 @@ const ListStudent = () => {
     );
 }
 
-export default ListStudent;
+export default ListPerson;
