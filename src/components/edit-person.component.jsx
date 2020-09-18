@@ -5,11 +5,11 @@ import axios from 'axios';
 
 const EditPerson = (props) => {
     const [data, setData] = useState({
-        name: "",
-        lastname: "",
-        address: "",
-        need: "",
-        contact_number: "",
+        person_name: "",
+        person_lastname: "",
+        person_address: "",
+        person_need: "",
+        contact_person_phonenumber: "",
         person_verification: false
     });
 
@@ -46,9 +46,9 @@ const EditPerson = (props) => {
                         <Label><AiOutlineUser />  Name </Label>
                         <Input
                             type="text"
-                            name="name"
+                            name="person_name"
                             className="form-control"
-                            value={data.name}
+                            value={data.person_name}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -57,9 +57,9 @@ const EditPerson = (props) => {
                         <Label><AiOutlineExport /> Lastname </Label>
                         <Input
                             type="text"
-                            name="lastname"
+                            name="person_lastname"
                             className="form-control"
-                            value={data.lastname}
+                            value={data.person_lastname}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -68,9 +68,9 @@ const EditPerson = (props) => {
                         <Label><AiOutlineExport /> Address </Label>
                         <Input
                             type="text"
-                            name="address"
+                            name="person_address"
                             className="form-control"
-                            value={data.address}
+                            value={data.person_address}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -79,18 +79,18 @@ const EditPerson = (props) => {
                         <Label><AiOutlineExport /> Need help with </Label>
                         <Input
                             type="text"
-                            name="need"
+                            name="person_need"
                             className="form-control"
-                            value={data.need}
+                            value={data.person_need}
                             onChange={onChangePersonData} />
                     </Col>
                     <Col md={6}>
-                        <Label><AiOutlineExport /> Entry Year </Label>
+                        <Label><AiOutlineExport /> Number to contact you </Label>
                         <Input
                             type="number"
-                            name="contact_number"
+                            name="contact_person_phonenumber"
                             className="form-control"
-                            value={data.contact_number}
+                            value={data.contact_person_phonenumber}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>

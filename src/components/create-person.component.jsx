@@ -5,11 +5,11 @@ import axios from 'axios';
 
 const CreatePerson = (props) => {
     const [data, setData] = useState({
-        name: "",
-        lastname: "",
-        address: "",
-        need: "",
-        contact_number: "",
+        person_name: "",
+        person_lastname: "",
+        person_address: "",
+        person_need: "",
+        person_person_phonenumber: "",
         person_verification: false
     });
 
@@ -24,11 +24,11 @@ const CreatePerson = (props) => {
         e.preventDefault();
         axios.post('http://localhost:4000/all_student/add', data).then(res => console.log(res.data));
         setData({
-            name: "",
-            lastname: "",
-            address: "",
-            need: "",
-            contact_number: "",
+            person_name: "",
+            person_lastname: "",
+            person_address: "",
+            person_need: "",
+            person_ccontact: "",
             person_verification: false
         });
     }
@@ -42,9 +42,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineUser /> Name </Label>
                         <Input
                             type="text"
-                            name="name"
+                            name="person_name"
                             className="form-control"
-                            value={data.name}
+                            value={data.person_name}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -53,9 +53,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Lastname </Label>
                         <Input
                             type="text"
-                            name="lastname"
+                            name="person_lastname"
                             className="form-control"
-                            value={data.lastname}
+                            value={data.person_lastname}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -64,9 +64,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Address </Label>
                         <Input
                             type="text"
-                            name="address"
+                            name="person_address"
                             className="form-control"
-                            value={data.address}
+                            value={data.person_address}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -84,9 +84,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Number to contact you</Label>
                         <Input
                             type="number"
-                            name="contact_number"
+                            name="contact_person_phonenumber"
                             className="form-control"
-                            value={data.contact_number}
+                            value={data.contact_person_phonenumber}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>

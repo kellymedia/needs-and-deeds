@@ -5,11 +5,11 @@ import axios from 'axios';
 
 const DeletePerson = (props) => {
     const [data, setData] = useState({
-        name: "",
-        lastname: "",
-        address: "",
-        need: "",
-        contact_number: "",
+        person_name: "",
+        person_lastname: "",
+        person_address: "",
+        person_need: "",
+        contact_person_phonenumber: "",
         person_verification: false
     });
 
@@ -39,9 +39,9 @@ const DeletePerson = (props) => {
                         <Input
                             readOnly
                             type="text"
-                            name="name"
+                            name="person_name"
                             className="form-control"
-                            value={data.name} />
+                            value={data.person_name} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -50,20 +50,20 @@ const DeletePerson = (props) => {
                         <Input
                             readOnly
                             type="text"
-                            name="lastname"
+                            name="person_lastname"
                             className="form-control"
-                            value={data.lastname} />
+                            value={data.person_lastname} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
                     <Col>
-                        <Label><AiOutlineExport /> Adress </Label>
+                        <Label><AiOutlineExport /> Address </Label>
                         <Input
                             readOnly
                             type="text"
-                            name="address"
+                            name="person_address"
                             className="form-control"
-                            value={data.address}/>
+                            value={data.person_address}/>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -72,18 +72,18 @@ const DeletePerson = (props) => {
                         <Input
                             readOnly
                             type="text"
-                            name="need"
+                            name="person_need"
                             className="form-control"
-                            value={data.need} />
+                            value={data.person_need} />
                     </Col>
                     <Col md={6}>
                         <Label><AiOutlineExport /> Number to contact you </Label>
                         <Input
                             readOnly
                             type="number"
-                            name="contact_number"
+                            name="contact_person_phonenumber"
                             className="form-control"
-                            value={data.contact_number}/>
+                            value={data.contact_person_phonenumber}/>
                     </Col>
                 </FormGroup>
                 <Button color="danger"><AiOutlineDelete /> Delete Data</Button>
