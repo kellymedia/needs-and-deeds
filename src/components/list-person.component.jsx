@@ -10,7 +10,7 @@ const ListBar = (props) => {
             <td>{props.person.person_name}</td> 
             <td>{props.person.person_address}</td>
             <td>{props.person.person_need}</td>
-            <td>{props.person.person_contactnumber}</td>
+            <td>{props.person.person_phonenumber}</td>
             <td>
                 {props.person.person_verification ? <Badge color="primary">Verified</Badge> : <Badge color="warning">Not Verified</Badge>}
             </td>
@@ -28,7 +28,7 @@ const ListPerson = () => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                'http://localhost:4000/all_student/'
+                'http://localhost:4000/all_person/'
             );
             setListData({ lists: result.data });
         };

@@ -9,14 +9,14 @@ const DeletePerson = (props) => {
         person_lastname: "",
         person_address: "",
         person_need: "",
-        contact_person_phonenumber: "",
+        person_phonenumber: "",
         person_verification: false
     });
 
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                `http://localhost:4000/all_student/${props.match.params.id}`
+                `http://localhost:4000/all_person/${props.match.params.id}`
             );
             setData({ ...result.data });
         };
@@ -25,7 +25,7 @@ const DeletePerson = (props) => {
 
     const onDeletePersonData = (e) => {
         e.preventDefault();
-        axios.delete(`http://localhost:4000/all_student/delete/${props.match.params.id}`, data).then(res => console.log(res.data));
+        axios.delete(`http://localhost:4000/all_person/delete/${props.match.params.id}`, data).then(res => console.log(res.data));
         props.history.push('/');
     }
 
@@ -81,9 +81,9 @@ const DeletePerson = (props) => {
                         <Input
                             readOnly
                             type="number"
-                            name="contact_person_phonenumber"
+                            name="person_phonenumber"
                             className="form-control"
-                            value={data.contact_person_phonenumber}/>
+                            value={data.person_phonenumber}/>
                     </Col>
                 </FormGroup>
                 <Button color="danger"><AiOutlineDelete /> Delete Data</Button>

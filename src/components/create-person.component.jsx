@@ -9,7 +9,7 @@ const CreatePerson = (props) => {
         person_lastname: "",
         person_address: "",
         person_need: "",
-        person_person_phonenumber: "",
+        person_phonenumber: "",
         person_verification: false
     });
 
@@ -22,13 +22,13 @@ const CreatePerson = (props) => {
 
     const onSubmitPersonData = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/all_student/add', data).then(res => console.log(res.data));
+        axios.post('http://localhost:4000/all_person/add', data).then(res => console.log(res.data));
         setData({
             person_name: "",
             person_lastname: "",
             person_address: "",
             person_need: "",
-            person_ccontact: "",
+            person_phonenumber: "",
             person_verification: false
         });
     }
@@ -84,9 +84,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Number to contact you</Label>
                         <Input
                             type="number"
-                            name="contact_person_phonenumber"
+                            name="person_phonenumber"
                             className="form-control"
-                            value={data.contact_person_phonenumber}
+                            value={data.person_phonenumber}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>

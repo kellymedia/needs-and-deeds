@@ -9,14 +9,14 @@ const EditPerson = (props) => {
         person_lastname: "",
         person_address: "",
         person_need: "",
-        contact_person_phonenumber: "",
+        person_phonenumber: "",
         person_verification: false
     });
 
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                `http://localhost:4000/all_student/${props.match.params.id}`
+                `http://localhost:4000/all_person/${props.match.params.id}`
             );
             setData({ ...result.data });
         };
@@ -33,7 +33,7 @@ const EditPerson = (props) => {
 
     const onSubmitPersonData = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:4000/all_student/update/${props.match.params.id}`, data).then(res => console.log(res.data));
+        axios.post(`http://localhost:4000/all_person/update/${props.match.params.id}`, data).then(res => console.log(res.data));
         props.history.push('/');
     }
 
@@ -88,9 +88,9 @@ const EditPerson = (props) => {
                         <Label><AiOutlineExport /> Number to contact you </Label>
                         <Input
                             type="number"
-                            name="contact_person_phonenumber"
+                            name="person_phonenumber"
                             className="form-control"
-                            value={data.contact_person_phonenumber}
+                            value={data.person_phonenumber}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
