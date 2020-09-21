@@ -9,9 +9,20 @@ class Location extends React.Component {
       userLocation: null,
     };
 
-    // get user location
-    
+    // bind user location
+    this.getLocation = this.getLocation.bind(this)
+
   }
+
+//  get geolocation if supported by user browser
+getLocation() {
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getUserCoordinates);
+} else {
+    alert("Geolocation is not supported by this browser!")
+}
+}
+
 
   render() {
     return (
@@ -28,4 +39,4 @@ class Location extends React.Component {
   }
 }
 
-export default App;
+export default Location;
