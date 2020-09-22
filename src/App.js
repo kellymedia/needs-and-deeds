@@ -1,6 +1,5 @@
 import React from "react";
 
-
 class Location extends React.Component {
   constructor(props) {
     super(props);
@@ -10,9 +9,10 @@ class Location extends React.Component {
       userLocation: null,
     };
 
-    // bind user location and coordinates
+    // bind user location, coordinates and address
     this.getLocation = this.getLocation.bind(this);
     this.getUserCoordinates = this.getUserCoordinates.bind(this);
+    this.getUserAdress = this.getUserAdress.bind(this);
   }
 
   //  use geolocation if supported by user browser to get coordinates
@@ -33,6 +33,24 @@ class Location extends React.Component {
       latitude: position.coords.latitude,
       longitude: position.coords.longitude,
     });
+    // call user address function after state has been set
+    this.getUserAdress();
+  }
+
+  // show user address
+  getUserAdress() {
+    fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}&sensor=false&makers=&key=key`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("data:", data)
+        this.setState({
+            userLocation: data.results[0].formatted_address
+        })
+
+      });
+
   }
 
   // handle location errors
@@ -79,6 +97,4 @@ class Location extends React.Component {
 
 export default Location;
 
-{
-  /* <img src={"https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=YOUR_API_KEY"} alt="" /> */
-}
+
