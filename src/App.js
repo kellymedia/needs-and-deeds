@@ -1,6 +1,6 @@
 import React from "react";
 
-// api key ="AIzaSyCjOCjtwI1DwmZa8GWFrgjnz3Aec4pV70U"
+
 class Location extends React.Component {
   constructor(props) {
     super(props);
@@ -68,7 +68,7 @@ class Location extends React.Component {
         {/* use ternary operator to check if late and lon is available and display image */}
         {this.state.latitude && this.state.longitude ? (
           <img
-            src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.latitude},${this.state.longitude}&zoom=14&size=400x300&sensor=false&makers=color:red%7C${this.state.latitude},${this.state.longitude}&key=AIzaSyCjOCjtwI1DwmZa8GWFrgjnz3Aec4pV70U`}
+            src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.latitude},${this.state.longitude}&zoom=14&size=400x300&sensor=false&makers=color:red%7C${this.state.latitude},${this.state.longitude}&key=key`}
             alt=""
           />
         ) : null}
