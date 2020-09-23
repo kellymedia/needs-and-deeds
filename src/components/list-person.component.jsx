@@ -10,7 +10,6 @@ const ListBar = (props) => {
             <td>{props.person.person_name}</td> 
             <td>{props.person.person_address}</td>
             <td>{props.person.person_need}</td>
-            <td>{props.person.person_phonenumber}</td>
             <td>
                 {props.person.person_verification ? <Badge color="primary">Verified</Badge> : <Badge color="warning">Not Verified</Badge>}
             </td>
@@ -44,7 +43,6 @@ const ListPerson = () => {
                         <th>Name</th>
                         <th>Address</th>
                         <th>Need</th>
-                        <th>Phone Number</th>
                         <th>Verification</th>
                         <th>Action</th>
                     </tr>

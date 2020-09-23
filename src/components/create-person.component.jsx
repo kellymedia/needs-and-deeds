@@ -31,6 +31,7 @@ const CreatePerson = (props) => {
             person_phonenumber: "",
             person_verification: false
         });
+        props.history.push('/');
     }
 
     return (
@@ -75,9 +76,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Need help with </Label>
                         <Input
                             type="text"
-                            name="need"
+                            name="person_need"
                             className="form-control"
-                            value={data.need}
+                            value={data.person_need}
                             onChange={onChangePersonData} />
                     </Col>
                     <Col md={6}>
