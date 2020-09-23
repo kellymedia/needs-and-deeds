@@ -5,7 +5,7 @@ let crudPerson = new Schema({
     person_name: {
         type: String
     },
-    person_lastname: {
+    person_email: {
         type: String
     },
     person_address: {

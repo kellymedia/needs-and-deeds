@@ -66,7 +66,7 @@ crudRoutes.route('/update/:id').post((req, res) => {
 crudRoutes.route('/delete/:id').delete((req, res) => {
     Crud.findByIdAndRemove(req.params.id, (err, data) => {
         if (err) return res.status(500).send("There was a problem deleting the user.");
-        res.status(200).send(`Student ${data.person_name} was deleted`);
+        res.status(200).send(`Deed ${data.person_name} was deleted`);
     })
 })
 
