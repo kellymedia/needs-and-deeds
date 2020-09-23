@@ -22,4 +22,4 @@ let crudPerson = new Schema({
     }
 });
 
-module.exports = mongoose.model('school_student', crudStudent);
+module.exports = mongoose.model('school_student', crudPerson);

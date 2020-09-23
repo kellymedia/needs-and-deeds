@@ -46,7 +46,7 @@ const DeletePerson = (props) => {
                 </FormGroup>
                 <FormGroup row>
                     <Col>
-                        <Label><AiOutlineExport /> Lastname </Label>
+                        <Label><AiOutlineExport /> Email </Label>
                         <Input
                             readOnly
                             type="text"
@@ -85,9 +85,14 @@ const DeletePerson = (props) => {
                             className="form-control"
                             value={data.person_phonenumber}/>
                     </Col>
+                    
                 </FormGroup>
-                <Button color="danger"><AiOutlineDelete /> Delete Data</Button>
+                <Button color="danger"><AiOutlineDelete /> Claim Deed</Button>
+
+                
             </Form>
+
+            
         </div>
     );
 }

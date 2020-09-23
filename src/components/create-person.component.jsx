@@ -6,7 +6,7 @@ import axios from 'axios';
 const CreatePerson = (props) => {
     const [data, setData] = useState({
         person_name: "",
-        person_lastname: "",
+        person_email: "",
         person_address: "",
         person_need: "",
         person_phonenumber: "",
@@ -25,12 +25,13 @@ const CreatePerson = (props) => {
         axios.post('http://localhost:4000/all_person/add', data).then(res => console.log(res.data));
         setData({
             person_name: "",
-            person_lastname: "",
+            person_email: "",
             person_address: "",
             person_need: "",
             person_phonenumber: "",
             person_verification: false
         });
+        props.history.push('/');
     }
 
     return (
@@ -50,12 +51,12 @@ const CreatePerson = (props) => {
                 </FormGroup>
                 <FormGroup row>
                     <Col>
-                        <Label><AiOutlineExport /> Lastname </Label>
+                        <Label><AiOutlineExport /> Email </Label>
                         <Input
                             type="text"
-                            name="person_lastname"
+                            name="person_email"
                             className="form-control"
-                            value={data.person_lastname}
+                            value={data.person_email}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -75,9 +76,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Need help with </Label>
                         <Input
                             type="text"
-                            name="need"
+                            name="person_need"
                             className="form-control"
-                            value={data.need}
+                            value={data.person_need}
                             onChange={onChangePersonData} />
                     </Col>
                     <Col md={6}>
