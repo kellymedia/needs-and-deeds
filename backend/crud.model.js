@@ -17,8 +17,12 @@ let crudPerson = new Schema({
     person_phonenumber: {
         type: Number
     },
-    person_verification: {
-        type: Boolean
+    person_date: {
+        type: Date,
+        default: Date.now
+    },
+    person_description: {
+        type: String,
     }
 });
 

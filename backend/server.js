@@ -38,6 +38,7 @@ crudRoutes.route('/add').post((req, res) => {
     let list = new Crud(req.body);
     list.save().then(list => {
         res.status(200).json({'list': 'Person added successfully'});
+        console.log(list)
     }).catch(err => {
         res.status(400).send('Adding failed');
     });
@@ -52,6 +53,7 @@ crudRoutes.route('/update/:id').post((req, res) => {
             data.person_address = req.body.person_address;
             data.person_need = req.body.person_need;
             data.person_phonenumber = req.body.person_phonenumber;
+            data.person_description = req.body.person_description;
             data.person_verification = req.body.person_verification;
             
             data.save().then(data => {
