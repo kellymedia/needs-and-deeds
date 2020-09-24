@@ -10,7 +10,8 @@ const CreatePerson = (props) => {
         person_address: "",
         person_need: "",
         person_phonenumber: "",
-        person_verification: false
+        person_date: "",
+        person_description:""
     });
 
     const onChangePersonData = (e) => {
@@ -29,17 +30,18 @@ const CreatePerson = (props) => {
             person_address: "",
             person_need: "",
             person_phonenumber: "",
-            person_verification: false
+            person_date: "",
+            person_description: ""
         });
         props.history.push('/');
     }
 
     return (
-        <div style={{ marginTop: 10 }}>
-            <h3><AiOutlineUserAdd /> Create Profile</h3>
+        <div className="create" style={{ marginTop: 10 }}>
+            <h3><AiOutlineUserAdd /> Enter Details About Your Need</h3>
             <Form onSubmit={onSubmitPersonData}>
                 <FormGroup row>
-                    <Col>
+                    <Col md={6}>
                         <Label><AiOutlineUser /> Name </Label>
                         <Input
                             type="text"
@@ -50,35 +52,13 @@ const CreatePerson = (props) => {
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Col>
-                        <Label><AiOutlineExport /> Lastname </Label>
+                    <Col md={6}>
+                        <Label><AiOutlineExport /> Email </Label>
                         <Input
                             type="text"
                             name="person_lastname"
                             className="form-control"
                             value={data.person_lastname}
-                            onChange={onChangePersonData} />
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Col>
-                        <Label><AiOutlineExport /> Address </Label>
-                        <Input
-                            type="text"
-                            name="person_address"
-                            className="form-control"
-                            value={data.person_address}
-                            onChange={onChangePersonData} />
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Col md={6}>
-                        <Label><AiOutlineExport /> Need help with </Label>
-                        <Input
-                            type="text"
-                            name="person_need"
-                            className="form-control"
-                            value={data.person_need}
                             onChange={onChangePersonData} />
                     </Col>
                     <Col md={6}>
@@ -91,7 +71,59 @@ const CreatePerson = (props) => {
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
-                <Button color="primary"><AiOutlineForward /> Submit</Button>
+                <FormGroup row>
+                    <Col md={6}>
+                        <Label><AiOutlineExport /> City/Town </Label>
+                        <Input
+                            type="text"
+                            name="person_address"
+                            className="form-control"
+                            value={data.person_address}
+                            onChange={onChangePersonData} />
+                    </Col>
+                    <Col md={6}>
+                        <Label><AiOutlineExport /> Date Posted/Needed </Label>
+                        <Input
+                            type="text"
+                            placeholder="MM/DD/YYYY"
+                            name="person_date"
+                            className="form-control"
+                            value={data.person_date}
+                            onChange={onChangePersonData} />
+                    </Col>
+                </FormGroup>
+                <FormGroup row>
+                    <Col md={6}>
+                        <Label><AiOutlineExport /> Need help with </Label>
+                        <Input
+                            type="select"
+                            name="person_need"
+                            className="form-control"
+                            value={data.person_need}
+                            onChange={onChangePersonData} >
+                            <option>Select</option>
+                            <option>Yard Work</option>
+                             <option>Housework</option>
+                          <option>Grocery</option>
+                             <option>School Work</option>
+                         <option>Other</option>
+                    </Input>
+                    </Col>
+                    
+                </FormGroup>
+                <FormGroup row>
+                    <Col>
+                        <Label><AiOutlineExport /> Description of Need </Label>
+                        <Input
+                            type="text"
+                            name="person_description"
+                            className="form-control"
+                            value={data.person_description}
+                            onChange={onChangePersonData} />
+                    </Col>
+                </FormGroup>
+
+            <Button color="primary"><AiOutlineForward /> Submit</Button>
             </Form>
         </div>
     );

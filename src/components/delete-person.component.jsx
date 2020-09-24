@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
-import { AiOutlineUser, AiOutlineExport, AiOutlineDelete } from 'react-icons/ai';
+import { AiOutlineUser, AiOutlineExport, AiOutlineForward } from 'react-icons/ai';
 import axios from 'axios';
 
 const DeletePerson = (props) => {
@@ -10,7 +10,7 @@ const DeletePerson = (props) => {
         person_address: "",
         person_need: "",
         person_phonenumber: "",
-        person_verification: false
+        person_description:""
     });
 
     useEffect(() => {
@@ -31,10 +31,11 @@ const DeletePerson = (props) => {
 
     return (
         <div style={{ marginTop: 10 }}>
-            <h3>Delete Name</h3>
+           <h3>Offer to Fulfill this Need</h3>
             <Form onSubmit={onDeletePersonData}>
+            <div className="claim">
                 <FormGroup row>
-                    <Col>
+                    <Col md={6}>
                         <Label><AiOutlineUser /> Name </Label>
                         <Input
                             readOnly
@@ -45,8 +46,8 @@ const DeletePerson = (props) => {
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Col>
-                        <Label><AiOutlineExport /> Lastname </Label>
+                    <Col md={6}>
+                        <Label><AiOutlineExport /> Email </Label>
                         <Input
                             readOnly
                             type="text"
@@ -56,14 +57,23 @@ const DeletePerson = (props) => {
                     </Col>
                 </FormGroup>
                 <FormGroup row>
-                    <Col>
-                        <Label><AiOutlineExport /> Address </Label>
+                    <Col md={6}>
+                        <Label><AiOutlineExport /> City/Town </Label>
                         <Input
                             readOnly
                             type="text"
                             name="person_address"
                             className="form-control"
                             value={data.person_address}/>
+                    </Col>
+                    <Col md={6}>
+                        <Label><AiOutlineExport /> Date Posted/Needed </Label>
+                        <Input
+                            readOnly
+                            type="text"
+                            name="person_date"
+                            className="form-control"
+                            value={data.person_date} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -77,7 +87,7 @@ const DeletePerson = (props) => {
                             value={data.person_need} />
                     </Col>
                     <Col md={6}>
-                        <Label><AiOutlineExport /> Number to contact you </Label>
+                        <Label><AiOutlineExport /> Contact Number </Label>
                         <Input
                             readOnly
                             type="number"
@@ -86,9 +96,32 @@ const DeletePerson = (props) => {
                             value={data.person_phonenumber}/>
                     </Col>
                 </FormGroup>
-                <Button color="danger"><AiOutlineDelete /> Delete Data</Button>
+                <FormGroup row>
+                    <Col>
+                        <Label><AiOutlineExport /> Description of Need </Label>
+                        <Input
+                            readOnly
+                            type="text"
+                            name="person_description"
+                            className="form-control"
+                            value={data.person_description} />
+                    </Col>
+                </FormGroup>
+                <FormGroup row>
+                    <Col md={6}>
+                        <Label><AiOutlineExport /> Enter Your Email </Label>
+                        <Input
+                            type="text"
+                            name="person_address"
+                            className="form-control" />
+                    </Col>
+                   
+                </FormGroup>
+                </div>
+                <div><Button color="danger"><AiOutlineForward /> Submit</Button></div>
             </Form>
         </div>
+        
     );
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Table, Badge } from 'reactstrap';
-import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
+import { AiOutlineEdit, AiOutlineDelete, AiOutlineMail } from 'react-icons/ai';
 
 const ListBar = (props) => {
     return (
@@ -10,12 +10,10 @@ const ListBar = (props) => {
             <td>{props.person.person_name}</td> 
             <td>{props.person.person_address}</td>
             <td>{props.person.person_need}</td>
+            <td>{props.person.person_date}</td>
             <td>
-                {props.person.person_verification ? <Badge color="primary">Verified</Badge> : <Badge color="warning">Not Verified</Badge>}
-            </td>
-            <td>
-                <Link to={"/edit/" + props.person._id}><AiOutlineEdit /></Link>
-                <Link to={"/delete/"+props.person._id}><AiOutlineDelete /></Link>
+                
+                <Link to={"/delete/"+props.person._id}><AiOutlineMail /></Link>
             </td>
         </tr>
     );
@@ -35,7 +33,7 @@ const ListPerson = () => {
     }, []);
 
     return (
-        <div>
+        <div className="list">
             <h3>List of Needs</h3>
             <Table striped style={{ marginTop: 20 }}>
                 <thead>
@@ -43,7 +41,7 @@ const ListPerson = () => {
                         <th>Name</th>
                         <th>Address</th>
                         <th>Need</th>
-                        <th>Verification</th>
+                        <th>Date Posted/Needed</th>
                         <th>Action</th>
                     </tr>
                 </thead>
