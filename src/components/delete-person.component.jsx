@@ -29,6 +29,22 @@ const DeletePerson = (props) => {
         props.history.push('/');
     }
 
+
+
+  //   // change when email address is entered
+//   const onChangeEmail = (e) => {
+//     const { name, value } = e.target;
+//     setData({
+//       ...data,
+//       [name]: value,
+        
+//     });
+//     console.log(data);
+//     // validateEmail(data)
+//     // console.log(validateEmail)
+//   };
+
+
     return (
         <div style={{ marginTop: 10 }}>
            <h3>Offer to Fulfill this Need</h3>
@@ -118,11 +134,15 @@ const DeletePerson = (props) => {
                    
                 </FormGroup>
                 </div>
-                <div><Button color="danger"><AiOutlineForward /> Submit</Button></div>
+                <div><Button color="danger" disabled={!data.person_helperemail}>
+          <AiOutlineForward  /> Claim Deed
+        </Button></div>
             </Form>
         </div>
         
     );
 }
+
+
 
 export default DeletePerson;
