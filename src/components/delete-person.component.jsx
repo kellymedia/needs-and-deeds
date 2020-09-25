@@ -40,7 +40,38 @@ const DeletePerson = (props) => {
     props.history.push("/");
   };
 
-  //   // change when email address is entered
+  
+  const ValidateCheck = (props) => {
+    const [data, setData] = useState({
+      person_helperemail: "",
+    });
+
+
+  // check for valid email address
+  const validateEmail = (data) => {
+    //    const {errors, setErrors} = useState ({person_helperemail: ""})
+      let errors = {};
+      if(!data.person_helperemail) {
+          errors.person_helperemail = "Please enter a valid email"
+      } else if (/\S+@\S+\S.\S+/.test(data.person_helperemail).length)
+
+      return errors;
+  }
+
+
+//   const validateEmail = (data) => {
+//     // validate email form somehow
+//     const valid = data.target.value.match(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/).length
+//     setData({ ...data, person: data.target.value })
+//     if (valid) {
+//        // activate button
+//     }
+//     if (!valid) {
+//        setData({ ...data, emailError: "Invalid email" })
+//     }
+
+
+   // change when email address is entered
   const onChangeEmail = (e) => {
     const { name, value } = e.target;
     setData({
@@ -48,8 +79,8 @@ const DeletePerson = (props) => {
       [name]: value,
     });
     console.log(data);
-    // validateEmail(data)
-    // console.log(validateEmail)
+    validateEmail(data)
+    console.log(validateEmail)
   };
 
   return (
