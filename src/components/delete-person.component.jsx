@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Form, FormGroup, Label, Input, Col, Button } from "reactstrap";
+import { Form, FormGroup, Label, Input, Col, Button} from "reactstrap";
 import {
   AiOutlineUser,
   AiOutlineExport,
   AiOutlineDelete,
 } from "react-icons/ai";
 import axios from "axios";
+
+// import Modalmessage from "./modal-message"
 
 const DeletePerson = (props) => {
   const [data, setData] = useState({
@@ -18,12 +20,15 @@ const DeletePerson = (props) => {
     person_helperemail: "",
   });
 
+ 
+
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
         `http://localhost:4000/all_person/${props.match.params.id}`
       );
       setData({ ...result.data });
+      console.log("feTCH DATA:", data)
     };
     fetchData();
   }, []);
@@ -40,47 +45,34 @@ const DeletePerson = (props) => {
     props.history.push("/");
   };
 
-  
-  const ValidateCheck = (props) => {
-    const [data, setData] = useState({
-      person_helperemail: "",
-    });
 
+const validateEmail = (data) => {
 
-  // check for valid email address
-  const validateEmail = (data) => {
-    //    const {errors, setErrors} = useState ({person_helperemail: ""})
-      let errors = {};
-      if(!data.person_helperemail) {
-          errors.person_helperemail = "Please enter a valid email"
-      } else if (/\S+@\S+\S.\S+/.test(data.person_helperemail).length)
+    console.log("email:", data.person_helperemail)
+    //     // validate email form somehow
+        const email = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(data.person_helperemail))
 
-      return errors;
-  }
-
-
-//   const validateEmail = (data) => {
-//     // validate email form somehow
-//     const valid = data.target.value.match(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/).length
-//     setData({ ...data, person: data.target.value })
-//     if (valid) {
-//        // activate button
-//     }
-//     if (!valid) {
-//        setData({ ...data, emailError: "Invalid email" })
-//     }
-
+        setData({ ...data, person: data.person_helperemail })
+        if (email) {
+          onChangeEmail()
+        }
+        if (!email) {
+           setData({ ...data, emailError: "Invalid email" })
+        }
+    
+    }
 
    // change when email address is entered
   const onChangeEmail = (e) => {
     const { name, value } = e.target;
+    // if()
     setData({
       ...data,
       [name]: value,
     });
     console.log(data);
     validateEmail(data)
-    console.log(validateEmail)
+    // console.log(validateEmail)
   };
 
   return (
@@ -204,6 +196,7 @@ const DeletePerson = (props) => {
           <Button color="danger" disabled={!data.person_helperemail}>
             <AiOutlineDelete /> Claim Deed
           </Button>
+          {/* <Modalmessage /> */}
         </div>
       </Form>
     </div>
