@@ -82,7 +82,7 @@ const CreatePerson = (props) => {
                             onChange={onChangePersonData} />
                     </Col>
                     <Col md={6}>
-                        <Label><AiOutlineExport /> Date Posted/Needed </Label>
+                        <Label><AiOutlineExport /> Help needed by (date) </Label>
                         <Input
                             type="text"
                             placeholder="MM/DD/YYYY"

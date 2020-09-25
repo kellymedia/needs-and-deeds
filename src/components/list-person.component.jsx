@@ -41,7 +41,7 @@ const ListPerson = () => {
                         <th>Name</th>
                         <th>Address</th>
                         <th>Need</th>
-                        <th>Date Posted/Needed</th>
+                        <th>Help needed by (date)</th>
                         <th>Action</th>
                     </tr>
                 </thead>
