@@ -131,7 +131,7 @@ const DeletePerson = (props) => {
             </Col>
             <Col md={6}>
               <Label>
-                <AiOutlineExport /> Date Posted/Needed{" "}
+                <AiOutlineExport /> Help needed by (date){" "}
               </Label>
               <Input
                 readOnly
