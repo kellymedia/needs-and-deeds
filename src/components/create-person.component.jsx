@@ -81,7 +81,8 @@ const CreatePerson = (props) => {
                     <Col md={6}>
                         <Label><AiOutlineExport /> Number to contact you</Label>
                         <Input
-                            type="text"
+                            type="number"
+                            placeholder="Enter phone number without dashes"
                             name="person_phonenumber"
                             className="form-control"
                             value={data.person_phonenumber}
