@@ -209,5 +209,5 @@ const DeletePerson = (props) => {
     </div>
   );
 };
-
+}
 export default DeletePerson;
