@@ -5,12 +5,12 @@ import axios from 'axios';
 
 const EditPerson = (props) => {
     const [data, setData] = useState({
-        person_name: "",
-        person_email: "",
-        person_address: "",
-        person_need: "",
-        person_phonenumber: "",
-        person_verification: false
+        personName: "",
+        personEmail: "",
+        personAddress: "",
+        personNeed: "",
+        personPhoneNumber: "",
+        personVerification: false
     });
 
     useEffect(() => {
@@ -46,9 +46,9 @@ const EditPerson = (props) => {
                         <Label><AiOutlineUser />  Name </Label>
                         <Input
                             type="text"
-                            name="person_name"
+                            name="personName"
                             className="form-control"
-                            value={data.person_name}
+                            value={data.personName}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -57,9 +57,9 @@ const EditPerson = (props) => {
                         <Label><AiOutlineExport /> Email </Label>
                         <Input
                             type="text"
-                            name="person_email"
+                            name="personEmail"
                             className="form-control"
-                            value={data.person_email}
+                            value={data.personEmail}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -68,9 +68,9 @@ const EditPerson = (props) => {
                         <Label><AiOutlineExport /> Address </Label>
                         <Input
                             type="text"
-                            name="person_address"
+                            name="personAddress"
                             className="form-control"
-                            value={data.person_address}
+                            value={data.personAddress}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -79,18 +79,18 @@ const EditPerson = (props) => {
                         <Label><AiOutlineExport /> Need help with </Label>
                         <Input
                             type="text"
-                            name="person_need"
+                            name="personNeed"
                             className="form-control"
-                            value={data.person_need}
+                            value={data.personNeed}
                             onChange={onChangePersonData} />
                     </Col>
                     <Col md={6}>
                         <Label><AiOutlineExport /> Number to contact you </Label>
                         <Input
                             type="number"
-                            name="person_phonenumber"
+                            name="personPhoneNumber"
                             className="form-control"
-                            value={data.person_phonenumber}
+                            value={data.personPhoneNumber}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -99,11 +99,11 @@ const EditPerson = (props) => {
                         <Label check>
                             <Input
                                 type="checkbox"
-                                name="person_verification"
-                                defaultChecked={data.person_verification ? true : false}
-                                value={data.person_verification ? Boolean(true) : Boolean(false)}
+                                name="personVerification"
+                                defaultChecked={data.personVerification ? true : false}
+                                value={data.personVerification ? Boolean(true) : Boolean(false)}
                                 onChange={onChangePersonData}
-                                required />{data.person_verification ? "Data is verified" : "Data isn't verified"}
+                                required />{data.personVerification ? "Data is verified" : "Data isn't verified"}
                         </Label>
                     </Col>
                 </FormGroup>

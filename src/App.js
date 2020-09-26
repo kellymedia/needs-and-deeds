@@ -3,10 +3,10 @@ import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import ListPerson from './components/list-person.component';
-import EditPerson from './components/edit-person.component';
-import CreatePerson from './components/create-person.component';
-import DeletePerson from './components/delete-person.component';
+import ListPerson from './components/listPerson.component';
+import EditPerson from './components/editPerson.component';
+import CreatePerson from './components/createPerson.component';
+import DeletePerson from './components/deletePerson.component';
 
 const App = () => {
   return (

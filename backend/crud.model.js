@@ -2,26 +2,26 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let crudPerson = new Schema({
-    person_name: {
+    personName: {
         type: String
     },
-    person_email: {
+    personEmail: {
         type: String
     },
-    person_address: {
+    personAddress: {
         type: String
     },
-    person_need: {
+    personNeed: {
         type: String
     },
-    person_phonenumber: {
+    personPhoneNumber: {
         type: String
     },
-    person_date: {
+    personDate: {
         type: Date,
         default: Date.now
     },
-    person_description: {
+    personDescription: {
         type: String,
     }
 });

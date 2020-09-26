@@ -9,14 +9,14 @@ import axios from "axios";
 
 const DeletePerson = (props) => {
   const [data, setData] = useState({
-    person_name: "",
-    person_email: "",
-    person_address: "",
-    person_need: "",
-    person_phonenumber: "",
-    person_description: "",
-    person_helperemail: "",
-    person_valid_email: false
+    personName: "",
+    personEmail: "",
+    personAddress: "",
+    personNeed: "",
+    personPhoneNumber: "",
+    personDescription: "",
+    personHelperEmail: "",
+    personValidEmail: false
   });
 
   useEffect(() => {
@@ -47,13 +47,13 @@ const DeletePerson = (props) => {
  //   validate helper's email on submission
  const validateEmail = (newData) => {
 
-  console.log("email:", newData.person_helperemail)
+  console.log("email:", newData.personHelperEmail)
 
-  const email = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(newData.person_helperemail));
+  const email = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(newData.personHelperEmail));
 
   setData ({
     ...newData,
-    person_valid_email: email
+    personValidEmail: email
   })
 
 }
@@ -85,9 +85,9 @@ const DeletePerson = (props) => {
               <Input
                 readOnly
                 type="text"
-                name="person_name"
+                name="personName"
                 className="form-control"
-                value={data.person_name}
+                value={data.personName}
               />
             </Col>
           </FormGroup>
@@ -99,9 +99,9 @@ const DeletePerson = (props) => {
               <Input
                 readOnly
                 type="text"
-                name="person_email"
+                name="personEmail"
                 className="form-control"
-                value={data.person_email}
+                value={data.personEmail}
               />
             </Col>
           </FormGroup>
@@ -113,9 +113,9 @@ const DeletePerson = (props) => {
               <Input
                 readOnly
                 type="text"
-                name="person_address"
+                name="personAddress"
                 className="form-control"
-                value={data.person_address}
+                value={data.personAddress}
               />
             </Col>
             <Col md={6}>
@@ -125,9 +125,9 @@ const DeletePerson = (props) => {
               <Input
                 readOnly
                 type="text"
-                name="person_date"
+                name="personDate"
                 className="form-control"
-                value={data.person_date}
+                value={data.personDate}
               />
             </Col>
           </FormGroup>
@@ -139,9 +139,9 @@ const DeletePerson = (props) => {
               <Input
                 readOnly
                 type="text"
-                name="person_need"
+                name="personNeed"
                 className="form-control"
-                value={data.person_need}
+                value={data.personNeed}
               />
             </Col>
             <Col md={6}>
@@ -151,9 +151,9 @@ const DeletePerson = (props) => {
               <Input
                 readOnly
                 type="text"
-                name="person_phonenumber"
+                name="personPhoneNumber"
                 className="form-control"
-                value={data.person_phonenumber}
+                value={data.personPhoneNumber}
               />
             </Col>
           </FormGroup>
@@ -165,9 +165,9 @@ const DeletePerson = (props) => {
               <Input
                 readOnly
                 type="text"
-                name="person_description"
+                name="personDescription"
                 className="form-control"
-                value={data.person_description}
+                value={data.personDescription}
               />
             </Col>
           </FormGroup>
@@ -178,19 +178,19 @@ const DeletePerson = (props) => {
               </Label>
               <Input
                 type="email"
-                name="person_helperemail"
-                value={data.person_helperemail}
+                name="personHelperEmail"
+                value={data.personHelperEmail}
                 onChange={onChangeEmail}
                 required
               />
-              {data.person_valid_email
+              {data.personValidEmail
                 ? "Email validated"
                 : "Please enter a valid email!"}
             </Col>
           </FormGroup>
         </div>
         <div>
-          <Button color="danger" disabled={!data.person_valid_email}>
+          <Button color="danger" disabled={!data.personValidEmail}>
             <AiOutlineDelete /> Claim Deed
           </Button>
         </div>
