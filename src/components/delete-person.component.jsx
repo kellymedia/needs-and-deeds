@@ -98,9 +98,9 @@ const DeletePerson = (props) => {
               <Input
                 readOnly
                 type="text"
-                name="person_lastname"
+                name="person_email"
                 className="form-control"
-                value={data.person_lastname}
+                value={data.person_email}
               />
             </Col>
           </FormGroup>
