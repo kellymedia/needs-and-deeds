@@ -45,33 +45,30 @@ const DeletePerson = (props) => {
     props.history.push("/");
   };
 
-
-const validateEmail = (data) => {
-
+  const validateEmail = (data) => {
     console.log("email:", data.person_helperemail)
-    //     // validate email form somehow
-        const email = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(data.person_helperemail))
 
-        setData({ ...data, person: data.person_helperemail })
-        if (email) {
-          onChangeEmail()
-        }
-        if (!email) {
-           setData({ ...data, emailError: "Invalid email" })
-        }
-    
-    }
+    const email = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(data.person_helperemail));
+
+   if(email) {
+      return "Valid email entered!"
+   } else {
+    // console.log(errors.person_helperemail = "Please enter a valid email")
+    return "Please enter a valid email to claim Deed!"
+   }
+
+}
 
    // change when email address is entered
   const onChangeEmail = (e) => {
     const { name, value } = e.target;
-    // if()
+
     setData({
       ...data,
       [name]: value,
     });
     console.log(data);
-    validateEmail(data)
+    // validateEmail(data)
     // console.log(validateEmail)
   };
 
@@ -186,14 +183,14 @@ const validateEmail = (data) => {
                 onChange={onChangeEmail}
                 required
               />
-              {data.person_helperemail
-                ? "Valid email entered"
-                : "Please enter your email address to claim this Deed"}
+              {data.email
+                ? validateEmail(data)
+                : validateEmail(data)}
             </Col>
           </FormGroup>
         </div>
         <div>
-          <Button color="danger" disabled={!data.person_helperemail}>
+          <Button color="danger" disabled={!data.email}>
             <AiOutlineDelete /> Claim Deed
           </Button>
           {/* <Modalmessage /> */}
