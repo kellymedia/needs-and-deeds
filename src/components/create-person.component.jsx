@@ -6,7 +6,7 @@ import axios from 'axios';
 const CreatePerson = (props) => {
     const [data, setData] = useState({
         person_name: "",
-        person_lastname: "",
+        person_email: "",
         person_address: "",
         person_need: "",
         person_phonenumber: "",
@@ -21,12 +21,28 @@ const CreatePerson = (props) => {
         })
     }
 
+ // validate email on submission
+ const validateEmail = (data) => {
+    console.log("person:", data.person_email);
+
+    const email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+      data.person_email
+    );
+
+    if (email) {
+      return "Valid email entered!";
+    } else {
+      return "Please enter a valid email";
+    }
+  };
+
+
     const onSubmitPersonData = (e) => {
         e.preventDefault();
         axios.post('http://localhost:4000/all_person/add', data).then(res => console.log(res.data));
         setData({
             person_name: "",
-            person_lastname: "",
+            person_email: "",
             person_address: "",
             person_need: "",
             person_phonenumber: "",
@@ -56,10 +72,11 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Email </Label>
                         <Input
                             type="text"
-                            name="person_lastname"
+                            name="person_email"
                             className="form-control"
-                            value={data.person_lastname}
+                            value={data.person_email}
                             onChange={onChangePersonData} />
+                            {data.email ? validateEmail(data) : validateEmail(data)}
                     </Col>
                     <Col md={6}>
                         <Label><AiOutlineExport /> Number to contact you</Label>

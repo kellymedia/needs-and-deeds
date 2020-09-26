@@ -40,35 +40,20 @@ const DeletePerson = (props) => {
     props.history.push("/");
   };
 
-  
-  const ValidateCheck = (props) => {
-    const [data, setData] = useState({
-      person_helperemail: "",
-    });
+ 
+ //   validate helper's email on submission
+ const validateEmail = (data) => {
+  console.log("email:", data.person_helperemail)
 
+  const email = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(data.person_helperemail));
 
-  // check for valid email address
-  const validateEmail = (data) => {
-    //    const {errors, setErrors} = useState ({person_helperemail: ""})
-      let errors = {};
-      if(!data.person_helperemail) {
-          errors.person_helperemail = "Please enter a valid email"
-      } else if (/\S+@\S+\S.\S+/.test(data.person_helperemail).length)
+ if(email) {
+    return "Valid email entered!"
+ } else {
+  return "Please enter a valid email to claim Deed!"
+ }
 
-      return errors;
-  }
-
-
-//   const validateEmail = (data) => {
-//     // validate email form somehow
-//     const valid = data.target.value.match(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/).length
-//     setData({ ...data, person: data.target.value })
-//     if (valid) {
-//        // activate button
-//     }
-//     if (!valid) {
-//        setData({ ...data, emailError: "Invalid email" })
-//     }
+}
 
 
    // change when email address is entered
@@ -79,8 +64,8 @@ const DeletePerson = (props) => {
       [name]: value,
     });
     console.log(data);
-    validateEmail(data)
-    console.log(validateEmail)
+    // validateEmail(data)
+    // console.log(validateEmail)
   };
 
   return (
@@ -194,14 +179,14 @@ const DeletePerson = (props) => {
                 onChange={onChangeEmail}
                 required
               />
-              {data.person_helperemail
-                ? "Valid email entered"
-                : "Please enter your email address to claim this Deed"}
+              {data.email
+                ? validateEmail(data)
+                : validateEmail(data)}
             </Col>
           </FormGroup>
         </div>
         <div>
-          <Button color="danger" disabled={!data.person_helperemail}>
+          <Button color="danger" disabled={!data.email}>
             <AiOutlineDelete /> Claim Deed
           </Button>
         </div>

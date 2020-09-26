@@ -49,7 +49,7 @@ crudRoutes.route('/update/:id').post((req, res) => {
         if (!data) res.status(404).send("Student is not found");
         else {
             data.person_name = req.body.person_name;
-            data.person_lastname = req.body.person_lastname;
+            data.person_email = req.body.person_email;
             data.person_address = req.body.person_address;
             data.person_need = req.body.person_need;
             data.person_phonenumber = req.body.person_phonenumber;
