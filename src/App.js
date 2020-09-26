@@ -1,7 +1,10 @@
 import React from 'react';
 import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";import './App.css';
+<<<<<<< HEAD
 import "bootstrap/dist/css/bootstrap.min.css";
+=======
+>>>>>>> 40b410551d495440e4b9029069146d74c00f52ac
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import ListPerson from './components/list-person.component';
