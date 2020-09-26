@@ -6,6 +6,7 @@ import {
   AiOutlineDelete,
 } from "react-icons/ai";
 import axios from "axios";
+import { set } from "mongoose";
 
 const DeletePerson = (props) => {
   const [data, setData] = useState({
@@ -16,6 +17,7 @@ const DeletePerson = (props) => {
     person_phonenumber: "",
     person_description: "",
     person_helperemail: "",
+    person_valid_email: false
   });
 
   useEffect(() => {
@@ -42,16 +44,16 @@ const DeletePerson = (props) => {
 
  
  //   validate helper's email on submission
- const validateEmail = (data) => {
-  console.log("email:", data.person_helperemail)
+ const validateEmail = (newData) => {
 
-  const email = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(data.person_helperemail));
+  console.log("email:", newData.person_helperemail)
 
- if(email) {
-    return "Valid email entered!"
- } else {
-  return "Please enter a valid email to claim Deed!"
- }
+  const email = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(newData.person_helperemail));
+
+  setData ({
+    ...newData,
+    person_valid_email: email
+  })
 
 }
 
@@ -59,12 +61,13 @@ const DeletePerson = (props) => {
    // change when email address is entered
   const onChangeEmail = (e) => {
     const { name, value } = e.target;
-    setData({
+    const newData = {
       ...data,
       [name]: value,
-    });
+    }
+    setData(newData);
     console.log(data);
-    // validateEmail(data)
+    validateEmail(newData)
     // console.log(validateEmail)
   };
 
@@ -179,14 +182,14 @@ const DeletePerson = (props) => {
                 onChange={onChangeEmail}
                 required
               />
-              {data.email
-                ? validateEmail(data)
-                : validateEmail(data)}
+              {data.person_valid_email
+                ? "Email validated"
+                : "Please enter a valid email!"}
             </Col>
           </FormGroup>
         </div>
         <div>
-          <Button color="danger" disabled={!data.email}>
+          <Button color="danger" disabled={!data.person_valid_email}>
             <AiOutlineDelete /> Claim Deed
           </Button>
         </div>
