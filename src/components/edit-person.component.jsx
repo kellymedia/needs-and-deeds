@@ -6,7 +6,7 @@ import axios from 'axios';
 const EditPerson = (props) => {
     const [data, setData] = useState({
         person_name: "",
-        person_lastname: "",
+        person_email: "",
         person_address: "",
         person_need: "",
         person_phonenumber: "",
@@ -54,12 +54,12 @@ const EditPerson = (props) => {
                 </FormGroup>
                 <FormGroup row>
                     <Col>
-                        <Label><AiOutlineExport /> Lastname </Label>
+                        <Label><AiOutlineExport /> Email </Label>
                         <Input
                             type="text"
-                            name="person_lastname"
+                            name="person_email"
                             className="form-control"
-                            value={data.person_lastname}
+                            value={data.person_email}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
