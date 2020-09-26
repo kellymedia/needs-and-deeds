@@ -5,13 +5,13 @@ import axios from 'axios';
 
 const CreatePerson = (props) => {
     const [data, setData] = useState({
-        person_name: "",
-        person_email: "",
-        person_address: "",
-        person_need: "",
-        person_phonenumber: "",
-        person_date: "",
-        person_description: ""
+        personName: "",
+        personEmail: "",
+        personAddress: "",
+        personNeed: "",
+        personPhoneNumber: "",
+        personDate: "",
+        personDescription: ""
     });
 
     const onChangePersonData = (e) => {
@@ -23,10 +23,10 @@ const CreatePerson = (props) => {
 
  // validate email on submission
  const validateEmail = (data) => {
-    console.log("person:", data.person_email);
+    console.log("person:", data.personEmail);
 
     const email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-      data.person_email
+      data.personEmail
     );
 
     if (email) {
@@ -41,13 +41,13 @@ const CreatePerson = (props) => {
         e.preventDefault();
         axios.post('http://localhost:4000/all_person/add', data).then(res => {
             setData({
-                person_name: "",
-                person_email: "",
-                person_address: "",
-                person_need: "",
-                person_phonenumber: "",
-                person_date: "",
-                person_description: ""
+                personName: "",
+                personEmail: "",
+                personAddress: "",
+                personNeed: "",
+                personPhoneNumber: "",
+                personDate: "",
+                personDescription: ""
             });
             console.log(res.data);
             props.history.push('/');
@@ -63,9 +63,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineUser /> Name </Label>
                         <Input
                             type="text"
-                            name="person_name"
+                            name="personName"
                             className="form-control"
-                            value={data.person_name}
+                            value={data.personName}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -74,9 +74,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Email </Label>
                         <Input
                             type="text"
-                            name="person_email"
+                            name="personEmail"
                             className="form-control"
-                            value={data.person_email}
+                            value={data.personEmail}
                             onChange={onChangePersonData} />
                             {data.email ? validateEmail(data) : validateEmail(data)}
                     </Col>
@@ -85,9 +85,9 @@ const CreatePerson = (props) => {
                         <Input
                             type="text"
                             placeholder="Enter contact phone number"
-                            name="person_phonenumber"
+                            name="personPhoneNumber"
                             className="form-control"
-                            value={data.person_phonenumber}
+                            value={data.personPhoneNumber}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -96,9 +96,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> City/Town </Label>
                         <Input
                             type="text"
-                            name="person_address"
+                            name="personAddress"
                             className="form-control"
-                            value={data.person_address}
+                            value={data.personAddress}
                             onChange={onChangePersonData} />
                     </Col>
                     <Col md={6}>
@@ -106,9 +106,9 @@ const CreatePerson = (props) => {
                         <Input
                             type="text"
                             placeholder="MM/DD/YYYY"
-                            name="person_date"
+                            name="personDate"
                             className="form-control"
-                            value={data.person_date}
+                            value={data.personDate}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>
@@ -117,9 +117,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Need help with </Label>
                         <Input
                             type="select"
-                            name="person_need"
+                            name="personNeed"
                             className="input-field"
-                            value={data.person_need}
+                            value={data.personNeed}
                             onChange={onChangePersonData} >
                             <option>Select</option>
                             <option>Yard Work</option>
@@ -136,9 +136,9 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Description of Need </Label>
                         <Input
                             type="text"
-                            name="person_description"
+                            name="personDescription"
                             className="form-control"
-                            value={data.person_description}
+                            value={data.personDescription}
                             onChange={onChangePersonData} />
                     </Col>
                 </FormGroup>

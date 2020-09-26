@@ -46,15 +46,15 @@ crudRoutes.route('/add').post((req, res) => {
 
 crudRoutes.route('/update/:id').post((req, res) => {
     Crud.findById(req.params.id, (err, data) => {
-        if (!data) res.status(404).send("Student is not found");
+        if (!data) res.status(404).send("Person is not found");
         else {
-            data.person_name = req.body.person_name;
-            data.person_email = req.body.person_email;
-            data.person_address = req.body.person_address;
-            data.person_need = req.body.person_need;
-            data.person_phonenumber = req.body.person_phonenumber;
-            data.person_description = req.body.person_description;
-            data.person_verification = req.body.person_verification;
+            data.personName = req.body.personName;
+            data.personEmail = req.body.personEmail;
+            data.personAddress = req.body.personAddress;
+            data.personNeed = req.body.personNeed;
+            data.personPhoneNumber = req.body.personPhoneNumber;
+            data.personDescription = req.body.personDescription;
+            data.personVerification = req.body.personVerification;
             
             data.save().then(data => {
                 res.json('Data is updated!');
@@ -68,7 +68,7 @@ crudRoutes.route('/update/:id').post((req, res) => {
 crudRoutes.route('/delete/:id').delete((req, res) => {
     Crud.findByIdAndRemove(req.params.id, (err, data) => {
         if (err) return res.status(500).send("There was a problem deleting the user.");
-        res.status(200).send(`Student ${data.person_name} was deleted`);
+        res.status(200).send(`Person ${data.personName} was deleted`);
     })
 })
 

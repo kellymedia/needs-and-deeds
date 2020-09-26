@@ -7,10 +7,10 @@ import { AiOutlineMail } from 'react-icons/ai';
 const ListBar = (props) => {
     return (
         <tr>
-            <td>{props.person.person_name}</td> 
-            <td>{props.person.person_address}</td>
-            <td>{props.person.person_need}</td>
-            <td>{props.person.person_date}</td>
+            <td>{props.person.personName}</td> 
+            <td>{props.person.personAddress}</td>
+            <td>{props.person.personNeed}</td>
+            <td>{props.person.personDate}</td>
             <td>
                 
                 <Link to={"/delete/"+props.person._id}><AiOutlineMail /></Link>
