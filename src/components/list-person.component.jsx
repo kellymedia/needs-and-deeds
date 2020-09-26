@@ -42,7 +42,7 @@ const ListPerson = () => {
                         <th>Address</th>
                         <th>Need</th>
                         <th>Help needed by (date)</th>
-                        <th>Action</th>
+                        <th>Claim Need</th>
                     </tr>
                 </thead>
                 <tbody>

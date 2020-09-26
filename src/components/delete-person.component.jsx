@@ -11,7 +11,7 @@ import { set } from "mongoose";
 const DeletePerson = (props) => {
   const [data, setData] = useState({
     person_name: "",
-    person_lastname: "",
+    person_email: "",
     person_address: "",
     person_need: "",
     person_phonenumber: "",
@@ -149,7 +149,7 @@ const DeletePerson = (props) => {
               </Label>
               <Input
                 readOnly
-                type="number"
+                type="text"
                 name="person_phonenumber"
                 className="form-control"
                 value={data.person_phonenumber}
