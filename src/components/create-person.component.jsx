@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
 import { AiOutlineUserAdd, AiOutlineUser, AiOutlineExport, AiOutlineForward } from 'react-icons/ai';
 import axios from 'axios';
@@ -11,7 +11,7 @@ const CreatePerson = (props) => {
         person_need: "",
         person_phonenumber: "",
         person_date: "",
-        person_description:""
+        person_description: ""
     });
 
     const onChangePersonData = (e) => {
@@ -39,17 +39,19 @@ const CreatePerson = (props) => {
 
     const onSubmitPersonData = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/all_person/add', data).then(res => console.log(res.data));
-        setData({
-            person_name: "",
-            person_email: "",
-            person_address: "",
-            person_need: "",
-            person_phonenumber: "",
-            person_date: "",
-            person_description: ""
-        });
-        props.history.push('/');
+        axios.post('http://localhost:4000/all_person/add', data).then(res => {
+            setData({
+                person_name: "",
+                person_email: "",
+                person_address: "",
+                person_need: "",
+                person_phonenumber: "",
+                person_date: "",
+                person_description: ""
+            });
+            console.log(res.data);
+            props.history.push('/');
+        })
     }
 
     return (
@@ -81,7 +83,8 @@ const CreatePerson = (props) => {
                     <Col md={6}>
                         <Label><AiOutlineExport /> Number to contact you</Label>
                         <Input
-                            type="number"
+                            type="text"
+                            placeholder="Enter contact phone number"
                             name="person_phonenumber"
                             className="form-control"
                             value={data.person_phonenumber}
@@ -115,7 +118,7 @@ const CreatePerson = (props) => {
                         <Input
                             type="select"
                             name="person_need"
-                            className="form-control"
+                            className="input-field"
                             value={data.person_need}
                             onChange={onChangePersonData} >
                             <option>Select</option>

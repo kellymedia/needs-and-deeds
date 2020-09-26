@@ -6,12 +6,11 @@ import {
   AiOutlineDelete,
 } from "react-icons/ai";
 import axios from "axios";
-import { set } from "mongoose";
 
 const DeletePerson = (props) => {
   const [data, setData] = useState({
     person_name: "",
-    person_lastname: "",
+    person_email: "",
     person_address: "",
     person_need: "",
     person_phonenumber: "",
@@ -38,8 +37,10 @@ const DeletePerson = (props) => {
         `http://localhost:4000/all_person/delete/${props.match.params.id}`,
         data
       )
-      .then((res) => console.log(res.data));
-    props.history.push("/");
+      .then((res) => {
+        props.history.push("/");
+        console.log(res.data);
+      })
   };
 
  
@@ -149,7 +150,7 @@ const DeletePerson = (props) => {
               </Label>
               <Input
                 readOnly
-                type="number"
+                type="text"
                 name="person_phonenumber"
                 className="form-control"
                 value={data.person_phonenumber}

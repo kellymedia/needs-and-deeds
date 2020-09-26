@@ -37,19 +37,37 @@
   }
 }
 
-.navbar {
-  background-color: #bd2169;
+.nav-wrapper {
+  background-color: #ff8808;
 }
 
-.deeds {
+/* .deeds {
   background-image: url(./gooddeeds.png);
   height: 300px;
   width: 100%;
   margin-top: 10px;
+} */
+/* .deeds {
+  background-image: url(../src/img/allgo-an-app-for-plus-size-people-VUZVlZs0hLs-unsplash.jpg);
+  height: 300px;
+  width: 100%;
+  margin-top: 10px;
+} */
+
+.deeds {
+  background: url("../src/img/allgo-an-app-for-plus-size-people-VUZVlZs0hLs-unsplash.jpg") center center/cover no-repeat;
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
 }
 
 body {
-  background-image: url(./neighborhood.jpg);
-  background-size: 100%;
+  /* background-image: url(./neighborhood.jpg); */
+  /* background-size: 100%; */
   background-repeat: no-repeat;
 }
