@@ -1,7 +1,6 @@
 import React from 'react';
 import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import ListPerson from './components/list-person.component';
