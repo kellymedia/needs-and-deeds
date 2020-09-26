@@ -45,6 +45,7 @@ const DeletePerson = (props) => {
     props.history.push("/");
   };
 
+//   validate helper's email on submission
   const validateEmail = (data) => {
     console.log("email:", data.person_helperemail)
 
@@ -53,7 +54,6 @@ const DeletePerson = (props) => {
    if(email) {
       return "Valid email entered!"
    } else {
-    // console.log(errors.person_helperemail = "Please enter a valid email")
     return "Please enter a valid email to claim Deed!"
    }
 
