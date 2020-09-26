@@ -26,4 +26,4 @@ let crudPerson = new Schema({
     }
 });
 
-module.exports = mongoose.model('school_student', crudPerson);
+module.exports = mongoose.model('needs_deeds', crudPerson);
