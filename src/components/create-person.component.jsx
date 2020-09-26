@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
 import { AiOutlineUserAdd, AiOutlineUser, AiOutlineExport, AiOutlineForward } from 'react-icons/ai';
 import axios from 'axios';
@@ -11,7 +11,7 @@ const CreatePerson = (props) => {
         person_need: "",
         person_phonenumber: "",
         person_date: "",
-        person_description:""
+        person_description: ""
     });
 
     const onChangePersonData = (e) => {
@@ -81,7 +81,7 @@ const CreatePerson = (props) => {
                     <Col md={6}>
                         <Label><AiOutlineExport /> Number to contact you</Label>
                         <Input
-                            type="number"
+                            type="text"
                             name="person_phonenumber"
                             className="form-control"
                             value={data.person_phonenumber}
