@@ -15,7 +15,7 @@ let crudPerson = new Schema({
         type: String
     },
     person_phonenumber: {
-        type: Number
+        type: String
     },
     person_date: {
         type: Date,

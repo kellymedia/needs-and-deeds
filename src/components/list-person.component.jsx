@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Table, Badge } from 'reactstrap';
-import { AiOutlineEdit, AiOutlineDelete, AiOutlineMail } from 'react-icons/ai';
+import { Table } from 'reactstrap';
+import { AiOutlineMail } from 'react-icons/ai';
 
 const ListBar = (props) => {
     return (

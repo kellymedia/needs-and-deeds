@@ -6,7 +6,6 @@ import {
   AiOutlineDelete,
 } from "react-icons/ai";
 import axios from "axios";
-import { set } from "mongoose";
 
 const DeletePerson = (props) => {
   const [data, setData] = useState({
@@ -38,8 +37,10 @@ const DeletePerson = (props) => {
         `http://localhost:4000/all_person/delete/${props.match.params.id}`,
         data
       )
-      .then((res) => console.log(res.data));
-    props.history.push("/");
+      .then((res) => {
+        props.history.push("/");
+        console.log(res.data);
+      })
   };
 
  

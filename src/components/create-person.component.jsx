@@ -39,17 +39,19 @@ const CreatePerson = (props) => {
 
     const onSubmitPersonData = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/all_person/add', data).then(res => console.log(res.data));
-        setData({
-            person_name: "",
-            person_email: "",
-            person_address: "",
-            person_need: "",
-            person_phonenumber: "",
-            person_date: "",
-            person_description: ""
-        });
-        props.history.push('/');
+        axios.post('http://localhost:4000/all_person/add', data).then(res => {
+            setData({
+                person_name: "",
+                person_email: "",
+                person_address: "",
+                person_need: "",
+                person_phonenumber: "",
+                person_date: "",
+                person_description: ""
+            });
+            console.log(res.data);
+            props.history.push('/');
+        })
     }
 
     return (
@@ -82,6 +84,7 @@ const CreatePerson = (props) => {
                         <Label><AiOutlineExport /> Number to contact you</Label>
                         <Input
                             type="text"
+                            placeholder="Enter contact phone number"
                             name="person_phonenumber"
                             className="form-control"
                             value={data.person_phonenumber}
@@ -115,7 +118,7 @@ const CreatePerson = (props) => {
                         <Input
                             type="select"
                             name="person_need"
-                            className="form-control"
+                            className="input-field"
                             value={data.person_need}
                             onChange={onChangePersonData} >
                             <option>Select</option>
