@@ -38,7 +38,8 @@ const EditPerson = (props) => {
     }
 
     return (
-        <div style={{ marginTop: 10 }}>
+        <div style={{}}>
+            <div className="edit-img"></div>
             <h3><AiOutlineUserAdd /> Edit Name</h3>
             <Form onSubmit={onSubmitPersonData}>
                 <FormGroup row>

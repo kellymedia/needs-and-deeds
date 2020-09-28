@@ -27,9 +27,9 @@ const App = () => {
         </nav> */}
         <nav>
           <div className="nav-wrapper">
-            <Link to="/!" className="brand-logo">Needs & Deeds</Link>
+            <Link to="/" className="brand-logo">Needs & Deeds</Link>
             <a href="/" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-              <ul className="right hide-on-med-and-down">
+              <ul className="right">
                 <li className="navbar-item">
                   <Link to="/" className="">View Local Needs</Link>
                 </li>
@@ -39,16 +39,6 @@ const App = () => {
               </ul>
           </div>
         </nav>
-        <ul id="nav-mobile" className="sidenav">
-                <li className="navbar-item">
-                  <Link to="/" className="">View Local Needs</Link>
-                </li>
-                <li className="navbar-item">
-                  <Link to="/create" className="nav-link"> Submit a Need</Link>
-                </li>
-              </ul>
-        <div className="deeds"></div>
-        <br />
         <Route path="/" exact component={ListPerson} />
         <Route path="/edit/:id" component={EditPerson} />
         <Route path="/create" component={CreatePerson} />

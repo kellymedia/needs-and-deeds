@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
 import { AiOutlineUserAdd, AiOutlineUser, AiOutlineExport, AiOutlineForward } from 'react-icons/ai';
 import axios from 'axios';
+// import Dropdown from './Dropdown';
 
 const CreatePerson = (props) => {
     const [data, setData] = useState({
@@ -55,7 +56,8 @@ const CreatePerson = (props) => {
     }
 
     return (
-        <div className="create" style={{ marginTop: 10 }}>
+        <div className="create" style={{ }}>
+            <div className="create-img"></div>
             <h3><AiOutlineUserAdd /> Enter Details About Your Need</h3>
             <Form onSubmit={onSubmitPersonData}>
                 <FormGroup row>
@@ -115,23 +117,35 @@ const CreatePerson = (props) => {
                 <FormGroup row>
                     <Col md={6}>
                         <Label><AiOutlineExport /> Need help with </Label>
+                        <p>Examples: Yard work, Housework, Schoolwork, Other</p>
                         <Input
-                            type="select"
+                            type="text"
                             name="personNeed"
-                            className="input-field"
+                            className="category"
                             value={data.personNeed}
                             onChange={onChangePersonData} >
-                            <option>Select</option>
+                            {/* <option>Select</option>
                             <option>Yard Work</option>
-                             <option>Housework</option>
-                          <option>Grocery</option>
-                             <option>School Work</option>
-                         <option>Other</option>
-                    </Input>
+                            <option>Housework</option>
+                            <option>Grocery</option>
+                            <option>School Work</option>
+                            <option>Other</option> */}
+                        </Input>
                     </Col>
-                    
                 </FormGroup>
                 <FormGroup row>
+                {/* <Dropdown>
+                    name="personNeed"
+                    className="input-field"
+                    value={data.personNeed}
+                    onChange={onChangePersonData} >
+                    <option>Select</option>
+                    <option>Yard Work</option>
+                    <option>Housework</option>
+                    <option>Grocery</option>
+                    <option>School Work</option>
+                    <option>Other</option>
+                </Dropdown> */}
                     <Col>
                         <Label><AiOutlineExport /> Description of Need </Label>
                         <Input
