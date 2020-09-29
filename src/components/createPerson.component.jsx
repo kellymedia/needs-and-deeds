@@ -57,7 +57,9 @@ const CreatePerson = (props) => {
 
     return (
         <div className="create" style={{ }}>
-            <div className="create-img"></div>
+            <div className="create-img">
+                <h1>Submit A Need</h1>
+            </div>
             <h3><AiOutlineUserAdd /> Enter Details About Your Need</h3>
             <p>Please fill out form with your details to submit a <b>need.</b></p>
             <Form className="create-form" onSubmit={onSubmitPersonData}>
