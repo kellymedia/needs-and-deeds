@@ -80,3 +80,5 @@ app.use('/all_person', crudRoutes);
 app.listen(PORT, () => {
     console.log("Server is running on PORT: " + PORT);
 })
+
+app.set("port", PORT);
