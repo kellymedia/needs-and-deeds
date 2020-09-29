@@ -73,8 +73,11 @@ const DeletePerson = (props) => {
   };
 
   return (
-    <div style={{ marginTop: 10 }}>
-      <h3>Offer to Fulfill this Need</h3>
+    <div style={{}}>
+      <div className="delete-img"></div>
+      <h2>Claim Need</h2>
+            <p>If you would like to offer to fulfill this need, please contact this person directly.</p>
+
       <Form onSubmit={onDeletePersonData}>
         <div className="claim">
           <FormGroup row>
@@ -190,6 +193,12 @@ const DeletePerson = (props) => {
           </FormGroup>
         </div>
         <div>
+        <p><i>*By agreeing to "Claim Deed" you are agreeing to:</i>
+          <ul>
+            <li>-contact this person</li>
+            <li>-offer to <u><b>voluntarily</b></u> fulfill the need</li>
+          </ul>
+        </p>
           <Button color="danger" disabled={!data.personValidEmail}>
             <AiOutlineDelete /> Claim Deed
           </Button>
