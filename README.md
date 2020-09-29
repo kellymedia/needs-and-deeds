@@ -3,7 +3,7 @@
 ## Description
 This is a social assistance app. Users can post tasks that they NEED help with. Some examples of NEEDs are changing a light-bulb in a hard to reach location, shopping for some groceries, yard-work, performing an oil change, etc. Other users can visit the app if they are interested in performing some good DEEDs for other people in their community or in the area they are visiting. Once a user sees a DEED they are prepared to assist with, they can CLAIM the NEED and contact the person who posted the NEED. There is no financial transaction; the NEEDs and DEEDs are voluntary, and they require no payments.  
 
-[![App Screenshot](./public/img/screenshot.png "app screenshot")](#)
+[![App Screenshot](./src/assets/screenshot.png "app screenshot")](#)
 
 ## Demo
 
