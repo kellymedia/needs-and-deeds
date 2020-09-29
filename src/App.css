@@ -55,7 +55,8 @@
 } */
 
 .create-img {
-  background: url("../src/assets/elder-1471399_1920.jpg") center center/cover no-repeat;
+  background: url("../src/assets/elder-1471399_1920.jpg") center center/cover no-repeat, linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
+  background-blend-mode: overlay;
   height: 50vh;
   width: 100%;
   display: flex;
@@ -66,8 +67,15 @@
   object-fit: contain;
 }
 
+/* .create-img:before {
+  content: "";
+  position: absolute;
+  background: #000000;
+  object-fit: contain;
+} */
+
 .delete-img {
-  background: url("../src/assets/wheelchair-908343_1920.jpg") center center/cover no-repeat;
+  background: url("../src/assets/wheelchair-908343_1920.jpg") bottom center/cover no-repeat, linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
   height: 50vh;
   width: 100%;
   display: flex;
@@ -79,7 +87,8 @@
 }
 
 .edit-img {
-  background: url("../src/assets/allgo-an-app-for-plus-size-people-ce5ShWF9tAY-unsplash.jpg") center center/cover no-repeat;
+  background: #000000,
+  url("../src/assets/allgo-an-app-for-plus-size-people-ce5ShWF9tAY-unsplash.jpg") center center/cover no-repeat;
   height: 50vh;
   width: 100%;
   display: flex;
@@ -91,7 +100,7 @@
 }
 
 .list-img {
-  background: url("../src/assets/allgo-an-app-for-plus-size-people-ce5ShWF9tAY-unsplash.jpg") center center/cover no-repeat;
+  background: url("../src/assets/allgo-an-app-for-plus-size-people-ce5ShWF9tAY-unsplash.jpg") center center/cover no-repeat, linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
   height: 50vh;
   width: 100%;
   display: flex;
@@ -146,8 +155,34 @@
   background: #fffffff0;
 }
 
+.create-img > h1 {
+  color: #fff;
+  text-shadow: 1px 1px 1px #0000008e;
+  text-align: center;
+}
+
+.list-img > h1 {
+  color: #fff;
+  text-shadow: 1px 1px 1px #0000008e;
+  text-align: center;
+}
+
+.delete-img > h1 {
+  color: #fff;
+  text-shadow: 1px 1px 1px #0000008e;
+  text-align: center;
+}
+
+.delete-img > h3 {
+  font-size: 2em;
+}
+
 .create > h3 {
   margin-left: 3%;
+}
+
+.list-blurb > h2 {
+  font-size: 2em;
 }
 
 .create > p {

@@ -21,7 +21,7 @@ const EditPerson = (props) => {
             setData({ ...result.data });
         };
         fetchData();
-    }, []);
+    }, [props.match.params.id]);
 
     const onChangePersonData = (e) => {
         setData({
