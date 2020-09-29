@@ -38,10 +38,10 @@ const EditPerson = (props) => {
     }
 
     return (
-        <div style={{}}>
+        <div className="edit" style={{}}>
             <div className="edit-img"></div>
             <h3><AiOutlineUserAdd /> Edit Name</h3>
-            <Form onSubmit={onSubmitPersonData}>
+            <Form className="edit-form" onSubmit={onSubmitPersonData}>
                 <FormGroup row>
                     <Col>
                         <Label><AiOutlineUser />  Name </Label>
