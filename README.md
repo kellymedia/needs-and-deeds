@@ -5,12 +5,12 @@ This is a social assistance app. Users can post tasks that they NEED help with. 
 
 [![App Screenshot](./src/assets/screenshot.png "app screenshot")](#)
 
-## Demo
+<!-- ## Demo
 
-Click here for a [demo](#) of this project.
+Click here for a [demo](#) of this project. -->
 
 ## Presentation 
-Click here to view the [presentation slide deck](#).
+Click here to view the [presentation slide deck](https://docs.google.com/presentation/d/1t2Xn62XMEFSCtAhT9ffzf0HjZXt-dnfSaj-p1HfzqWQ/edit?usp=sharing).
 
 ## User Story
 
