@@ -59,7 +59,8 @@ const CreatePerson = (props) => {
         <div className="create" style={{ }}>
             <div className="create-img"></div>
             <h3><AiOutlineUserAdd /> Enter Details About Your Need</h3>
-            <Form onSubmit={onSubmitPersonData}>
+            <p>Please fill out form with your details to submit a <b>need.</b></p>
+            <Form className="create-form" onSubmit={onSubmitPersonData}>
                 <FormGroup row>
                     <Col md={6}>
                         <Label><AiOutlineUser /> Name </Label>
@@ -82,6 +83,7 @@ const CreatePerson = (props) => {
                             onChange={onChangePersonData} />
                             {data.email ? validateEmail(data) : validateEmail(data)}
                     </Col>
+                    <br />
                     <Col md={6}>
                         <Label><AiOutlineExport /> Number to contact you</Label>
                         <Input
@@ -117,7 +119,6 @@ const CreatePerson = (props) => {
                 <FormGroup row>
                     <Col md={6}>
                         <Label><AiOutlineExport /> Need help with </Label>
-                        <p>Examples: Yard work, Housework, Schoolwork, Other</p>
                         <Input
                             type="text"
                             name="personNeed"
@@ -131,6 +132,7 @@ const CreatePerson = (props) => {
                             <option>School Work</option>
                             <option>Other</option> */}
                         </Input>
+                        <p>Examples: Yard work, Housework, Schoolwork, Other</p>
                     </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -146,7 +148,7 @@ const CreatePerson = (props) => {
                     <option>School Work</option>
                     <option>Other</option>
                 </Dropdown> */}
-                    <Col>
+                    <Col md={6}>
                         <Label><AiOutlineExport /> Description of Need </Label>
                         <Input
                             type="text"
