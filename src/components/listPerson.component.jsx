@@ -10,9 +10,9 @@ const ListBar = (props) => {
             <td>{props.person.personName}</td> 
             <td>{props.person.personAddress}</td>
             <td>{props.person.personNeed}</td>
+            <td>{props.person.personDescription}</td>
             <td>{props.person.personDate}</td>
             <td>
-                
                 <Link to={"/delete/"+props.person._id}><AiOutlineMail /></Link>
             </td>
         </tr>
@@ -34,23 +34,33 @@ const ListPerson = () => {
 
     return (
         <div className="list">
-            <h3>List of Needs</h3>
-            <Table striped style={{ marginTop: 20 }}>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Need</th>
-                        <th>Help needed by (date)</th>
-                        <th>Claim Need</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {listData.lists.map((current, i) => (
-                        <ListBar person={current} key={i} />
-                    ))}
-                </tbody>
-            </Table>
+            <div className="list-img"></div>
+                <div className="list-blurb"><h2>Needs & Deeds</h2>
+                <p>This is the current list of needs in the community. Someone has submitted a request for help.</p>
+                <p>Every <b><i>need</i></b>  is is waiting to be claimed.</p>
+                <p>If you would like to perform a <b><i>deed</i></b>, click the "Claim Need" mail icon to access the contact information.</p>
+                <h3>List of Needs</h3>
+                <p id="table-hint">Scroll right to view contact info.</p>
+            </div>
+            <div id="table-div">
+                <Table striped style={{  }}>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Need</th>
+                            <th>Description</th>
+                            <th>Help needed by (date)</th>
+                            <th>Claim Need</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {listData.lists.map((current, i) => (
+                            <ListBar person={current} key={i} />
+                        ))}
+                    </tbody>
+                </Table>
+            </div>
         </div>
     );
 }

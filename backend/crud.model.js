@@ -18,8 +18,7 @@ let crudPerson = new Schema({
         type: String
     },
     personDate: {
-        type: Date,
-        default: Date.now
+        type: String,
     },
     personDescription: {
         type: String,
