@@ -6,7 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 4000;
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/needs-and-deeds');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://project3:superfly1@ds261342.mlab.com:61342/heroku_mc9z7hkv');
 
 const crudRoutes = express.Router();
 let Crud = require('./crud.model');
@@ -24,9 +24,12 @@ connection.once('open', () => {
 
 crudRoutes.route('/').get((req, res) => {
     Crud.find((err, results) => {
-        if (err) console.log(err);
-        else res.json(results);
-    });
+            if (err)
+                console.log(err);
+
+            else
+                res.json(results);
+        });
 });
 
 crudRoutes.route('/:id').get((req, res) => {
@@ -74,6 +77,10 @@ crudRoutes.route('/delete/:id').delete((req, res) => {
         res.status(200).send(`Person ${data.personName} was deleted`);
     })
 })
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
 
 app.use('/all_person', crudRoutes);
 
