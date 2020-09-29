@@ -27,7 +27,7 @@ const DeletePerson = (props) => {
       setData({ ...result.data });
     };
     fetchData();
-  }, []);
+  }, [props.match.params.id]);
 
 
   const onDeletePersonData = (e) => {
