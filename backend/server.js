@@ -6,7 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 4000;
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://project3:superfly1@ds261342.mlab.com:61342/heroku_mc9z7hkv');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/needs-and-deeds');
 
 const crudRoutes = express.Router();
 let Crud = require('./crud.model');
