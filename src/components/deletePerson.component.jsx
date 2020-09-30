@@ -74,7 +74,9 @@ const DeletePerson = (props) => {
 
   return (
     <div className="delete" style={{}}>
-      <div className="delete-img"></div>
+      <div className="delete-img">
+      <h1>Claim A Need</h1>
+      </div>
         <h3>Claim Need</h3>
         <p>If you would like to offer to fulfill this need, please contact this person directly.</p>
 

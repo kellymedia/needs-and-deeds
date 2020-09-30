@@ -34,7 +34,9 @@ const ListPerson = () => {
 
     return (
         <div className="list">
-            <div className="list-img"></div>
+            <div className="list-img">
+            <h1>View Local Needs</h1>
+            </div>
                 <div className="list-blurb"><h2>Needs & Deeds</h2>
                 <p>This is the current list of needs in the community. Someone has submitted a request for help.</p>
                 <p>Every <b><i>need</i></b>  is is waiting to be claimed.</p>
