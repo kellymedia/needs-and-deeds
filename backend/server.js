@@ -6,7 +6,10 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 4000;
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://project3:superfly1@ds261342.mlab.com:61342/heroku_mc9z7hkv');
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/needs-and-deeds');
 
 const crudRoutes = express.Router();
 let Crud = require('./crud.model');
@@ -78,14 +81,8 @@ crudRoutes.route('/delete/:id').delete((req, res) => {
     })
 })
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-}
-
 app.use('/all_person', crudRoutes);
 
 app.listen(PORT, () => {
     console.log("Server is running on PORT: " + PORT);
 })
-
-app.set("port", PORT);
