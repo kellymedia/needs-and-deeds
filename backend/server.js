@@ -6,9 +6,12 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 4000;
 
+<<<<<<< HEAD
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
+=======
+>>>>>>> 2e1fdf0873bb14b72f82baecfe29238fbd811158
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/needs-and-deeds');
 
 const crudRoutes = express.Router();
@@ -85,4 +88,10 @@ app.use('/all_person', crudRoutes);
 
 app.listen(PORT, () => {
     console.log("Server is running on PORT: " + PORT);
+<<<<<<< HEAD
 })
+=======
+})
+
+app.set("port", PORT);
+>>>>>>> 2e1fdf0873bb14b72f82baecfe29238fbd811158
